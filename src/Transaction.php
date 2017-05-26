@@ -209,6 +209,10 @@ class Transaction
             $api->setTransferValue($options['transferValue']);
         }
 
+        if (isset($options['promotorId'])) {
+            $api->setPromotorId($options['promotorId']);
+        }
+
         $result = $api->doRequest();
 
         return new Result\Start($result);
